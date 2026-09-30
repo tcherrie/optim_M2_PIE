@@ -23,7 +23,8 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Build the JupyterLite site
         run: |
-          jupyter lite build --pyodide https://ngsolve.org/files/ngsolve_pyodide_0.27.6.tar.bz2 --contents content --output-dir dist
+          cp README.md content
+          jupyter lite build --contents content --output-dir dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
